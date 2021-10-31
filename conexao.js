@@ -2,7 +2,7 @@
 require('dotenv').config()
 const connect = ()=>{
     const mongoose = require('mongoose');
-    mongoose.connect(process.env.DATABASE_URL,{
+    mongoose.connect("mongodb+srv://meuBanco:fabio2020@cluster0.w2xad.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
         useNewUrlParser:true,
         useUnifiedTopology:true
     })
