@@ -14,6 +14,7 @@ exports.post = (req,res)=>{
    model_planta.create({
        titulo:req.body.titulo,
        imagem:req.body.imagem,
+       descricao:req.body.descricao,
        preco:req.body.preco
    })
    res.send('produto inserido com sucesso')
