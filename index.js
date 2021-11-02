@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const route = require('./routes/route');
 const cors = require('cors')
+app.use(express.json())
 require('dotenv').config();
 app.use(express.urlencoded({ extended: true}));
 const PORT = process.env.PORT || 3001;
