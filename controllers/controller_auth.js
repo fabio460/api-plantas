@@ -22,7 +22,7 @@ exports.gerar_jwt =async (req,res)=>{
    })
 
    if(!user){
-     res.status(400).send('usuario não encontrado')
+     res.send('usuario não encontrado')
    }else{
      return res.json({
        token : jwt.sign({usuario:req.body.usuario},'my-secret-key',{expiresIn:300}),
