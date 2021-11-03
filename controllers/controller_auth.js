@@ -3,17 +3,6 @@ const usuario = require('../models/model_usuario')
 
 
 exports.gerar_jwt =async (req,res)=>{
-
-  //  const queryUsuario = await usuario.find();
-   // queryUsuario.find( (item)=>{
-     //   if(req.body.email === item.email && req.body.senha === item.senha){
-       //   const token = jwt.sign({usuario:req.body.usuario},'my-secret-key',{expiresIn:300})
-        //  res.json({usuario:item.nome,token:token});
-          
-       // }
-    //})
-    
-   //return res.status(401).send({erro:"não encontrado"})
     
    const {email,senha} = req.body;
    const user =await usuario.findOne({

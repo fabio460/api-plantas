@@ -15,6 +15,11 @@ exports.listarUsuario = async(req,res)=>{
 }
 
 exports.listarUsuarioPorNome = async(req,res)=>{
-  const u =await usuario.findOne({nome:req.params.nome});
-  res.json({email:u.email});
+  const u =await usuario.findOne({email:req.params.email});
+  if(!u){
+     res.send('não encontrado');
+  }
+  else{
+    return res.json({email:u.email});
+  }
 }

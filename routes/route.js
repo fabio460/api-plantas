@@ -17,5 +17,5 @@ route.get('/auth',controller_auth.config,controller_auth.validar);
 route.post('/deslogar',controller_auth.deslogar)
 route.post('/cadastrarUsuario',multer(multer_config).single(),controller_usuario.cadastrar);
 route.get('/listarUsuario',controller_usuario.listarUsuario);
-route.get('/listarusuariopelonome/:nome',controller_usuario.listarUsuarioPorNome)
+route.get('/listarusuariopelonome/:email',controller_usuario.listarUsuarioPorNome)
 module.exports = route;
