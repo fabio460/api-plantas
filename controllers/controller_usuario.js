@@ -13,3 +13,8 @@ exports.listarUsuario = async(req,res)=>{
   const u =await usuario.find();
   res.json(u);
 }
+
+exports.listarUsuarioPorNome = async(req,res)=>{
+  const u =await usuario.findOne({nome:req.params.nome});
+  res.json({email:u.email});
+}
