@@ -1,16 +1,20 @@
 const jwt = require('jsonwebtoken');
 const usuario = require('../models/model_usuario')
+
+
 exports.gerar_jwt =async (req,res)=>{
 
-    const queryUsuario =await usuario.find();
+    const queryUsuario = await usuario.find();
     queryUsuario.findIndex( (item)=>{
         if(req.body.email === item.email && req.body.senha === item.senha){
           const token = jwt.sign({usuario:req.body.usuario},'my-secret-key',{expiresIn:300})
-          res.json({usuario:item.nome,token:token})
+          res.json({usuario:item.nome,token:token});
+        }else{
+          res.status(401).end()
         }
     })
-    res.send('usuario não cadastrado');
-  }
+}
+
 
   exports.validar = (req,res)=>{
       res.send('usuario logado')
