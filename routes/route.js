@@ -11,6 +11,7 @@ const config_token = require('../controllers/controller_auth')
 route.get('/listar',controller_planta.get)
 route.post('/postar',multer(multer_config).single(),controller_planta.post)
 route.delete('/deletar/:id',controller_planta.delete);
+route.put('/atualizar/:id',controller_planta.update)
 //usuario
 route.post('/token',multer(multer_config).single(),controller_auth.gerar_jwt)
 route.get('/auth',controller_auth.config,controller_auth.validar);

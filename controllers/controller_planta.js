@@ -29,3 +29,14 @@ exports.delete = (req,res)=>{
     }
   })
 }
+
+exports.update =async (req,res)=>{
+    model_planta.findByIdAndUpdate(req.params.id,req.body,(err)=>{
+      if(err){
+        res.send("erro ao atualizar id:"+req.params.id)
+      }else{
+        res.send('alterado com sucesso id:' + req.params.id)
+      }
+    })
+
+}
