@@ -7,6 +7,10 @@ const multer = require('multer');
 const multer_config =require('../multer_config');
 const jwt = require('jsonwebtoken');
 const config_token = require('../controllers/controller_auth')
+
+route.get('/',(req,res)=>{
+   res.send(__dirname,'..','home.html')
+})
 //produto
 route.get('/listar',controller_planta.get)
 route.post('/postar',multer(multer_config).single(),controller_planta.post)

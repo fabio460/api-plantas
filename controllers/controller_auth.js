@@ -14,7 +14,7 @@ exports.gerar_jwt =async (req,res)=>{
      res.send('usuario não encontrado')
    }else{
      return res.json({
-       token : jwt.sign({usuario:req.body.usuario},'my-secret-key',{expiresIn:30000}),
+       token : jwt.sign({usuario:req.body.usuario},'my-secret-key',{expiresIn:40000}),
        usuario:user.nome
      })
    }
